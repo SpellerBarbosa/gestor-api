@@ -7,13 +7,6 @@ class App {
   constructor() {
     this.server = express();
     this.port = process.env.PORT || 3001;
-    connectToDB();
-
-    this.middlewares();
-    this.routes();
-  }
-
-  middlewares() {
     this.server.use(express.json());
     this.server.use(
       cors({
@@ -22,9 +15,15 @@ class App {
         credentials: true,
       })
     );
+    connectToDB();
+
+    this.middlewares();
+    this.routes();
   }
 
-  routes() {
+  middlewares() {}
+
+ routes() {
     this.server.use(router);
   }
 
