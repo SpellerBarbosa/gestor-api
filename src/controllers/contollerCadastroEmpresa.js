@@ -2,6 +2,7 @@ import User from "../models/userModel.js";
 
 const controllerCadastroEmpresa = async (req, res) =>{
     const {empresa, email, password, acesso } = req.body;
+    console.log(empresa)
 
     if(!empresa || !email || !password || !acesso){
         return res.status(404).json({mensagem:"Todos os campos são obrigatorios"});

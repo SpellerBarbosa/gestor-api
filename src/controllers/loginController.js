@@ -5,9 +5,8 @@ import dontenv from 'dotenv';
 dontenv.config();
 
 const loginController = async (req, res) => {
-    const email = req.body.email.toLowerCase().trim();
-    const password = req.body.password.toLowerCase().trim();
-
+    const {email, password} =req.body;
+    
 
   if (!email || !password) {
     return res
