@@ -9,11 +9,11 @@ class App {
     this.port = process.env.PORT || 3001;
     this.server.use(express.json());
     this.server.use(
-      cors(
-        // origin: "https://projeto-e-gestor.vercel.app", 
-        // methods: ["GET", "POST"], 
-        // credentials: true,
-      )
+      cors({
+        origin: "https://projeto-e-gestor.vercel.app",
+        methods: ["GET", "POST"],
+        credentials: true,
+      })
     );
     connectToDB();
 
@@ -23,7 +23,7 @@ class App {
 
   middlewares() {}
 
- routes() {
+  routes() {
     this.server.use(router);
   }
 
