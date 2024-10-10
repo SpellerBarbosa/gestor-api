@@ -33,10 +33,10 @@ const loginController = async (req, res) => {
       return res.status(404).json({ mensagem: "Senha invalida." });
     }
   } catch (error) {
-    return res
-      .status(500)
-      .json({ mensagem: "Erro ao se conectar com o servidor: ", error });
-  }
+       res.status(500).json({ mensagem: "Erro ao se conectar com o servidor: ", error });
+       console.error(error)
+       return
+    }
 };
 
 export default loginController;

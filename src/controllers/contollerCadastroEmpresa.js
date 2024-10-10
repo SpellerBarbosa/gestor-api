@@ -10,8 +10,8 @@ const controllerCadastroEmpresa = async (req, res) =>{
     try {
         const user = await User.findOne({email});
 
-        if(!user){
-            return res.status(401).json({mensagem: "Empresa não cadastrada."});
+        if(user){
+            return res.status(401).json({mensagem: "Empresa já possui cadastro."});
         }
 
         const newUser = await User.create({

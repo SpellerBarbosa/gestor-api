@@ -21,10 +21,10 @@ const userSchema = mongoose.Schema({
     }
 });
 
-userSchema.pre('save', async function next() {
+userSchema.pre('save', async function(next) {
     const user = this;
 
-    if(!!user.isModified('password')) return next();
+    if(!user.isModified('password')) return next();
 
     try{
         const salt = await bcrypt.genSalt(10);

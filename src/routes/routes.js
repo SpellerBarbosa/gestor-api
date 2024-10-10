@@ -13,6 +13,6 @@ router.post("/api/login", loginController);
 
 router.get("/api/rota-protegida", verifyToken, routerProtect);
 
-router.get("/api/cadastrar-empresa", controllerCadastroEmpresa);
+router.post("/api/cadastrar-empresas", controllerCadastroEmpresa);
 
 export default router;
