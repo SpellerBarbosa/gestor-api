@@ -10,11 +10,11 @@ class App {
     this.server.use(express.json());
     this.server.use(
       cors(
-      //   {
-      //   origin: "https://projeto-e-gestor.vercel.app",
-      //   methods: ["GET", "POST"],
-      //   credentials: true,
-      // }
+        {
+        origin: "https://projeto-e-gestor.vercel.app",
+        methods: ["GET", "POST"],
+        credentials: true,
+      }
       )
     );
     connectToDB();
